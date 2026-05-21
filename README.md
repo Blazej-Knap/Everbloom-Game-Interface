@@ -1,10 +1,10 @@
-# 🌸 Everbloom – Game Interface
+# Everbloom – Game Interface
 
 > Projekt zaliczeniowy: Interfejs użytkownika do gry w stylu farming sim / cozy RPG, zbudowany w **Unity (URP)** z użyciem systemu UI Toolkit i wbudowanego Unity UI (uGUI).
 
 ---
 
-## 📋 Opis projektu
+## Opis projektu
 
 **Everbloom** to interfejs użytkownika do gry farmerskiej tworzonej na potrzeby zajęć z tworzenia UI. Projekt obejmuje kompletny zestaw ekranów i mechanizmów nawigacji między nimi, w tym:
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 🗂️ Struktura projektu
+## Struktura projektu
 
 ```
 Everbloom-Game-Interface/
@@ -37,7 +37,7 @@ Everbloom-Game-Interface/
 
 ---
 
-## 🎮 Sceny
+## Sceny
 
 | Scena | Opis |
 |---|---|
@@ -50,7 +50,7 @@ Everbloom-Game-Interface/
 
 ---
 
-## 🧩 Skrypty
+## Skrypty
 
 ### Główne (`Assets/Scripts/`)
 
@@ -81,7 +81,7 @@ Everbloom-Game-Interface/
 
 ---
 
-## ⚙️ Wymagania
+## Wymagania
 
 - **Unity** 2022.3 LTS lub nowszy (projekt korzysta z **Universal Render Pipeline – URP**)
 - **Unity Input System** (nowy system wejścia)
@@ -95,14 +95,14 @@ Everbloom-Game-Interface/
 
 ---
 
-## 🚀 Uruchomienie
+## Uruchomienie
 
-### ▶️ Wersja skompilowana (gotowy .exe)
+### Wersja skompilowana (gotowy .exe)
 
 1. Przejdź do folderu `Execute/`
 2. Uruchom `Everbloom.exe`
 
-> ⚠️ Folder `Execute/` musi być uruchamiany w całości (nie przenoś samego `.exe` bez pozostałych plików).
+> Folder `Execute/` musi być uruchamiany w całości (nie przenoś samego `.exe` bez pozostałych plików).
 
 ### 🛠️ Wersja edytorska (Unity)
 
@@ -120,7 +120,7 @@ Everbloom-Game-Interface/
 
 ---
 
-## 🎨 Funkcje UI
+## Funkcje UI
 
 - **Efekty hover na przyciskach** – powiększenie + zmiana koloru + animacja wciśnięcia (zaimplementowane przez `ButtonHoverEffect` i `GlobalUIFixer`)
 - **Walidacja formularza** – ekran nowej gry wymaga podania nazwy farmy przed uruchomieniem gry
@@ -132,7 +132,7 @@ Everbloom-Game-Interface/
 
 ---
 
-## 📁 Dodatkowe informacje
+## Dodatkowe informacje
 
 - Projekt nie używa OneDrive do przechowywania kompilacji — buduj do lokalnego katalogu poza `OneDrive`, aby uniknąć problemów z synchronizacją podczas budowania.
 - Singleton `GlobalInputManager` jest dodany do sceny `MainMenu` i trwa przez cały czas życia gry (`DontDestroyOnLoad`).
@@ -140,6 +140,6 @@ Everbloom-Game-Interface/
 
 ---
 
-## 👤 Autor
+## Autor
 
 Projekt tworzony na potrzeby zajęć akademickich z projektowania interfejsów użytkownika.
