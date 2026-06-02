@@ -35,6 +35,9 @@ namespace Kinnly
 
         public bool IsInventoryOpen => inventoryUI != null && inventoryUI.activeInHierarchy;
 
+        private bool closedThisFrame = false;
+        public bool ClosedThisFrame => closedThisFrame;
+
         private DialogBox dialogBox;
 
         // Start is called before the first frame update
@@ -49,6 +52,8 @@ namespace Kinnly
         // Update is called once per frame
         void Update()
         {
+            closedThisFrame = false;
+
             //Num Key to switch selected Toolbar
             int keyNumber = GetKeyNumber();
             if (keyNumber != -1)
@@ -77,6 +82,15 @@ namespace Kinnly
             if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Tab))
             {
                 ToggleInventory();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (IsInventoryOpen)
+                {
+                    ToggleInventory();
+                    closedThisFrame = true;
+                }
             }
 
             if (Input.GetMouseButtonUp(0))

@@ -24,25 +24,22 @@ namespace Kinnly
         }
 
         // Update is called once per frame
+        private Vector2 movementInput;
+
+        // Update is called once per frame
         void Update()
         {
             if (animator == null) animator = GetComponent<Animator>();
-            Movement();
-        }
-
-        void Movement()
-        {
+            
             if (isUsingTools)
             {
-                rb.linearVelocity = Vector2.zero;
+                movementInput = Vector2.zero;
                 return;
             }
 
             float xMovement = Input.GetAxisRaw("Horizontal");
             float yMovement = Input.GetAxisRaw("Vertical");
-
-            Vector2 movement = new Vector2(xMovement, yMovement).normalized * speed;
-            rb.linearVelocity = movement;
+            movementInput = new Vector2(xMovement, yMovement);
 
             if (xMovement != 0f || yMovement != 0f)
             {
@@ -55,6 +52,17 @@ namespace Kinnly
             {
                 animator.SetBool("Run", false);
             }
+        }
+
+        void FixedUpdate()
+        {
+            if (isUsingTools)
+            {
+                rb.linearVelocity = Vector2.zero;
+                return;
+            }
+
+            rb.linearVelocity = movementInput.normalized * speed;
         }
 
         public void SetDirection(Vector2 _direction)

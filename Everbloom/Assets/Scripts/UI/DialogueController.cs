@@ -6,6 +6,10 @@ public class DialogueController : MonoBehaviour
     public GameObject dialogueCanvas;
 
     private bool isDialogueActive = false;
+    private bool closedThisFrame = false;
+
+    public bool IsDialogueActive => isDialogueActive;
+    public bool ClosedThisFrame => closedThisFrame;
 
     void Start()
     {
@@ -28,12 +32,14 @@ public class DialogueController : MonoBehaviour
 
     void Update()
     {
+        closedThisFrame = false;
         if (isDialogueActive)
         {
             // "po kliknięciu bylejakich klawiszy chowa dialog i pokazuje toolbar znowu"
             if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2))
             {
                 HideDialogue();
+                closedThisFrame = true;
             }
         }
     }

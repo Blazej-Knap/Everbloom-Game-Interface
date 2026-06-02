@@ -34,6 +34,7 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetInt(MuzykaKey, isOn ? 1 : 0);
         PlayerPrefs.Save();
         Debug.Log($"Muzyka: {isOn}");
+        GlobalInputManager.ApplyAudioSettings();
     }
 
     private void OnDzwiekiChanged(bool isOn)
@@ -41,6 +42,7 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetInt(DzwiekiKey, isOn ? 1 : 0);
         PlayerPrefs.Save();
         Debug.Log($"Dźwięki: {isOn}");
+        GlobalInputManager.ApplyAudioSettings();
     }
 
     private void OnGlosnoscChanged(float value)
@@ -48,5 +50,6 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat(GlosnoscKey, value);
         PlayerPrefs.Save();
         Debug.Log($"Głośność: {value}");
+        GlobalInputManager.ApplyAudioSettings();
     }
 }
